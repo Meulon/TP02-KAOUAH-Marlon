@@ -1,0 +1,64 @@
+<h2>Création de compte</h2>
+<div *ngIf="!validator" class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="name"> Nom </label>
+          <input type="text" id="nom" class="form-control" name="nom" [(ngModel)]="nom" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> Prenom </label>
+            <input type="text" id="prenom" class="form-control" name="prenom" [(ngModel)]="prenom" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> Adresse </label>
+            <input type="text" id="adresse" class="form-control" name="adresse" [(ngModel)]="adresse" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> Code Postal </label>
+            <input type="text" id="cp" class="form-control" name="codePostal" [(ngModel)]="codePostal" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> Ville </label>
+            <input type="text" id="ville" class="form-control" name="ville" [(ngModel)]="ville" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> Tel </label>
+            <input type="tel" id="tel" class="form-control" name="tel" [(ngModel)]="tel" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> Email </label>
+            <input type="email" id="email" class="form-control" name="email" [(ngModel)]="email" ngModel required>
+        </div>
+        <div class="form-group">
+          <label for="civilite"> civilite </label>
+          <select id="civilite" class="form-control" name="civilite" [(ngModel)]="civilite" ngModel required>
+            <option value="mr">Mr</option>
+            <option value="mme">Mme</option>
+            <option value="mlle">Mlle</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="name"> Mot de passe </label>
+            <input type="password" id="pass" class="form-control" name="pass" [(ngModel)]="pass" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> Confirmer votre mot de passe </label>
+            <input type="password" id="passConfirmation" class="form-control" name="passConfirmation" [(ngModel)]="passConfirmation" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> login </label>
+            <input type="text" id="login" class="form-control" name="login" [(ngModel)]="login" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="name"> pays </label>
+            <input type="text" id="pays" class="form-control" name="pays" [(ngModel)]="pays" ngModel required>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+  <app-recap *ngIf="validator" 
+  [nom] = "nom" [prenom] = "prenom" [adresse] = "adresse" [codePostal] = "codePostal" [ville] = "ville" [tel] = "tel" [email] = "email" [civilite] = "civilite" [pass] = "pass" [login] = "login" [pays] = "pays" >
+</app-recap>
